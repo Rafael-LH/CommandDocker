@@ -1,4 +1,4 @@
-# Primer Hola Mundo
+## Primer Hola Mundo
 
 Realicemos nuestro primer Hola Mundo en Docker utilizando el comando  
 
@@ -6,13 +6,13 @@ Realicemos nuestro primer Hola Mundo en Docker utilizando el comando
   docker run hello-world
   ```   
 
-# Contenedores
+## Contenedores
 Los contenedores son el **concepto fundamental** al hablar de docker. Un contenedor es una entidad lógica,  
 una agrupación de procesos que se ejecutan de forma nativa como cualquier otra aplicación en la máquina host.  
 
 *Un contenedor ejecuta sus procesos de forma nativa*  
 
-# Explorar el estado de docker
+## Explorar el estado de docker
 
 Vamos a conocer algunos trucos de nuestra consola para explorar el estado del docker  
 
@@ -21,28 +21,38 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ```
   docker ps -a
   ```  
-  # Podemos inspeccionar un contenedor en específico utilizando:  
+  ## Podemos inspeccionar un contenedor en específico utilizando:  
 
   ```
   docker inspect nombreDelContenedor
   ```
-  # para renombrar un contenedor lo hacemos de la siguiente manera  
+  ## para renombrar un contenedor lo hacemos de la siguiente manera  
 
   ```
   docker rename <nombreContenedorAnterior> <NombreDeContenedorQueQueremos>
   ```
-  # para borrar un contenedor:  
+  ## para borrar un contenedor:  
 
   ```
   docker rm <NombreDelContenedor>
   ``` 
-  # Con los siguientes parametros podemos ver una lista de containers pero solo nos mostrara sus ID  
+  ## Con los siguientes parametros podemos ver una lista de containers pero solo nos mostrara sus ID  
 
   ```
   docker ps -aq
   ```
-  # Para borrar una lista de contenedores hacemos lo siguiente  
+  ## Para borrar una lista de contenedores hacemos lo siguiente  
 
   ```
   docker rm $(docker ps -aq)
   ```
+  ## El modo interactivo  
+  
+  lo que hacemos con lo siguiente es correr ubunto en la terminal en la que estamos en este momento  
+  es decir estariamos utilizando la terminal de ubunto en una terminal de mac en mi caso  
+
+  ```
+  docker run -it ubuntu
+  ```  
+
+  y para salirnos de ese shell solo ponemos el comando **exit**
