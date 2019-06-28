@@ -5,7 +5,6 @@ Realicemos nuestro primer Hola Mundo en Docker utilizando el comando
     ```
     docker run hello-world
     ```
-
 # Contenedores
 Los contenedores son el **concepto fundamental** al hablar de docker. Un contenedor es una entidad lógica,  
 una agrupación de procesos que se ejecutan de forma nativa como cualquier otra aplicación en la máquina host.  
@@ -21,8 +20,28 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ```
   docker ps -a
   ```  
-  Podemos inspeccionar un contenedor en específico utilizando:  
+  # Podemos inspeccionar un contenedor en específico utilizando:  
 
   ```
   docker inspect nombreDelContenedor
+  ```
+  # para renombrar un contenedor lo hacemos de la siguiente manera  
+
+  ```
+  docker rename <nombreContenedorAnterior> <NombreDeContenedorQueQueremos>
+  ```
+  # para borrar un contenedor:  
+
+  ```
+  docker rm <NombreDelContenedor>
+  ``` 
+  # Con los siguientes parametros podemos ver una lista de containers pero solo nos mostrara sus ID  
+
+  ```
+  docker ps -aq
+  ```
+  # Para borrar una lista de contenedores hacemos lo siguiente  
+
+  ```
+  docker rm $(docker ps -aq)
   ```
