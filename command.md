@@ -103,3 +103,10 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
 
   No puedo asignar más de un contenedor a un mismo puerto.
 
+  ## Crear datos en docker
+
+  ```
+  docker run -d --name db -v /Users/rafaellopez/Documents/HTML/CommandDocker/mongodata:/data/db mongo 
+  ```
+
+  El ***-v*** es de volumen de datos el siguiente path es el destino de mi pc ***/Users/rafaellopez/Documents/HTML/CommandDocker/mongodata*** despues de los ***:*** es el destino del contenedor que seria el siguiente path ***/data/db mongo ***
