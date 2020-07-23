@@ -110,3 +110,27 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ```
 
   El ***-v*** es de volumen de datos el siguiente path es el destino de mi pc ***/Users/rafaellopez/Documents/HTML/CommandDocker/mongodata*** despues de los ***:*** es el destino del contenedor que seria el siguiente path ***/data/db mongo ***
+
+  ## Listar volumenes 
+
+  ```
+  docker volume ls
+  ```
+ 
+  ## Borrar volumenes que no estamos usando en nuestros contenedores
+
+  ```
+  docker volume prune
+  ```
+
+  ## Crear un volumen
+
+  ```
+  docker create volume <Nombre del volumen>
+  ```
+
+  Para poder asociar el directorio de un contenedor a un volumen se utiliza el parámetro ***--mount***, luego ***src*** para indicar el volumen donde se guardará la información, y luego ***dst*** para indicar el destino o directorio del contenedor que se montará en el volumen indicado en ***src***
+
+  ```
+  docker run -d --name db --mount src=dbdata,dst=/data/db mongo
+  ```
