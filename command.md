@@ -54,7 +54,7 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   docker rm $(docker ps -aq)
   ```
 
-  ## Para meternos dentro de un contenedor 
+  ## Para meternos dentro de un contenedor de manera interactiva
 
   ```
   docker run -it <Nombre de la imagen>
@@ -63,7 +63,7 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ***-t*** Asignar un pseudo-tty (Terminal).
   ***-i*** mantén STDIN abierto incluso si no está conectado.
 
-  ## Para ingresar a la bash de un contenedor
+  ## Para ingresar a la bash de un contenedor de manera interactiva
 
   ```
   docker exec -it <Nombre contenedor> bash
@@ -80,3 +80,26 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ```
   docker rm -f <Nombre contenedor>
   ```
+
+  ## Correr un servidor con ngnix
+
+  ```
+  docker run (--detach) ó (-d) --name nginx
+  ```
+  Si el contenedor que voy a ejecutar tiene un proceso que tiene output y/o pretende correr en modo interactivo, lo va omitir, me va dar el control de la terminal.
+
+  pero de esta manera solo mantengo el puerto abierto pero dentro del contenedor, para que este puerto escuche desde el navegador 
+  hacemos lo siguiente.
+
+  ```
+  docker run --detach --name servertwo -p 8080:80 nginx
+  ```
+
+  ***-p*** es de publish y esta bandera es para atar los puertos. Primero el de mi maquina y después el del contenedor.
+  Ahora en PORTS aparece que puerto de mi maquina está dirigiendo hacia el puerto del contenedor.
+  En el navegador localhost:8080 y ya puedo ver nginx, 
+  
+  el ***8080*** es el puerto de mi host de nuestro servidor y el ***80*** es el puerto del contenedor.
+
+  No puedo asignar más de un contenedor a un mismo puerto.
+
