@@ -134,3 +134,15 @@ Para listar todos los contenedores de Docker, utilizamos el comando :
   ```
   docker run -d --name db --mount src=dbdata,dst=/data/db mongo
   ```
+
+  # Imágenes 
+
+  Las imágenes son un componente fundamental de Docker y sin ellas los contenedores no tendrían sentido. Estas imágenes son fundamentalmente plantillas o templates.
+  Algo que debemos tener en cuenta es que las imágenes no van a cambiar, es decir, una vez este realizada no la podremos cambiar.
+  Cada capa es una pequeña diferencia con la anterior, funciona algo similar a git.
+
+  ## Traer una imágen 
+
+  ```
+  docker pull <repositorio>:<versión>
+  ```
